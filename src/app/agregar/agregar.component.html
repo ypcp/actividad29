@@ -1,0 +1,38 @@
+<div class="pt-3 pb-2 mb-3 border-bottom">
+    <h2 class="h2">Añadir Articulo</h2>
+
+</div>
+<div class="card mx-auto mt-4" style=" width: 500px; text-align: center; ">
+    <div class="card-body">
+        <form action="" [formGroup]="userForm" (ngSubmit)="submitArticuloData()" novalidate>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="">Codigo</label>
+                        <input type="number" class="form-control" formControlName="codigo" required>
+
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="">Descripcion</label>
+                        <input type="text" class="form-control" formControlName="descripcion" required>
+
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="">Precio</label>
+                        <input type="number" class="form-control" formControlName="precio" required>
+
+                    </div>
+                
+
+                </div>
+                <div class="form-group text-right">
+                    <button type="button" class="btn btn-dark gap-right m-4" (click)="ResetForm()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary gap-right" [disabled]="!userForm.valid">Confirmar</button>
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

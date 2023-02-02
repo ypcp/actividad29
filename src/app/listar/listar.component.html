@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h2 class="h2">Lista de Articulos</h2>
+</div>
+<div class="pricing-header mx-auto">
+    <div class="table-responsive">
+        <table class="table table-bordered table-responsive-sm table-responsive-lg">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">CODIGO</th>
+                    <th scope="col">DESCRIPCION</th>
+                    <th scope="col">PRECIO</th>
+                    
+                    <th scope="col" class="text-center">MODIFICAR / BORRAR</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of Users">
+                    <th scope="row"> {{user.codigo}} </th>
+                    <td> {{user.descripcion}} </td>
+                    <td> {{user.precio}} </td>
+                    
+                    <td class="text-center action-block"> 
+                        <a href="" class="mr-2 btn btn-outline-primary btn-sm" routerLink="/modificar/:{{user.codigo}}" routerLinkActive="active">
+                            Modificar
+                        </a>
+                        <span class="btn btn-outline-danger btn-sm m-2" (click)="deleteArticulo(user)">
+                            Borrar 
+                        </span>
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
